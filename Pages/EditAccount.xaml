@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mauiPopup:BasePopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.EditAccount"
+             xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:mauiPopup="clr-namespace:MauiPopup.Views;assembly=MauiPopup"
+                          IsCloseOnBackgroundClick="False"
+                         ForegroundColor="Transparent"
+             Title="EditAccount">
+    <ContentPage.Content>
+        <Grid> 
+            <StackLayout VerticalOptions="Center" Margin="15" Padding="15"> 
+                <ScrollView>
+                    <Frame BackgroundColor="{StaticResource Secondary}">
+                        <StackLayout HorizontalOptions="Fill" VerticalOptions="Center">
+                            <Label Text="Edit Account" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource Primary}" HorizontalOptions="Center" />
+                            <StackLayout Margin="0,20,0,0">
+                                <Label FontFamily="MontserratRegular" TextColor="Black" 
+                                   FontSize="13" Text="Name of the event"/>
+                                <Grid Margin="0,5">
+                                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                                    <Entry BackgroundColor="Transparent" x:Name="userName" ReturnType="Next" Keyboard="Text"  Placeholder="Name" FontSize="13"
+                                       TextColor="Black" Margin="5,0"
+                                       PlaceholderColor="Gray" />
+                                    <!--<Label FontSize="13" TextColor="Red" Text="Please enter a name " IsVisible="False"  x:Name="ErrorName"/>-->
+                                    <Label Padding="0" FontSize="13" TextColor="Red" Text="Please enter your name " IsVisible="False" x:Name="ErrorName"/>
+                                </Grid >
+                            </StackLayout>
+
+                            <StackLayout Margin="0,5,0,0">
+                                <Label FontFamily="MontserratRegular" TextColor="Black" 
+                                   FontSize="13" Text="Institute"/>
+                                <Grid Margin="0,5">
+                                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                                    <Entry BackgroundColor="Transparent" x:Name="userInstitute" ReturnType="Next" Keyboard="Text"  Placeholder="Institute Name" FontSize="13"
+                                       TextColor="Black" Margin="5,0"
+                                       PlaceholderColor="Gray" />
+                                    <!--<Label FontSize="13" TextColor="Red" Text="Please enter a name " IsVisible="False"  x:Name="ErrorName"/>-->
+                                    <Label Padding="0" FontSize="13" TextColor="Red" Text="Please enter the name of your Institute " IsVisible="False" x:Name="ErrorInstite"/>
+                                </Grid >
+                            </StackLayout>
+
+                            <StackLayout Margin="0,5,0,0">
+                                <Label FontFamily="MontserratRegular" TextColor="Black" 
+                                   FontSize="13" Text="Your email"/>
+                                <Grid Margin="0,5">
+                                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                                    <Entry BackgroundColor="Transparent" x:Name="userEmail" ReturnType="Next" Keyboard="Text"  Placeholder="Email" FontSize="13"
+                                       TextColor="Black" Margin="5,0"
+                                       PlaceholderColor="Gray" />
+                                    <!--<Label FontSize="13" TextColor="Red" Text="Please enter a name " IsVisible="False"  x:Name="ErrorName"/>-->
+                                    <!--<Label Padding="0" FontSize="13" TextColor="Red" Text="Email" IsVisible="False" x:Name="ErrorInstite"/>-->
+                                </Grid >
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,5,0,0">
+                                <Button x:Name="save_profile_button" Text="Save" Clicked="save_profile_button_Clicked" Scale="0.9" BackgroundColor="{StaticResource Primary}" TextColor="White" CornerRadius="20" WidthRequest="110" FontSize="14"/>
+                                <Button Text="Cancel" Clicked="Cancel_Clicked" Scale="0.9" BackgroundColor="{StaticResource Primary}" TextColor="White" FontAttributes="Bold" CornerRadius="20" WidthRequest="110" FontSize="14"/>
+                            </StackLayout>
+                            
+                            <!--<StackLayout Margin="10">
+                                
+                                
+                                    --><!--<Label Text="Name *" FontSize="13"/>
+                                     <Entry Placeholder="Name" x:Name="userName" ReturnType="Next" Keyboard="Text" FontSize="13"/>
+                                    <Label Padding="0" FontSize="13" TextColor="Red" Text="Please enter your name " IsVisible="False" x:Name="ErrorName"/>
+                                    <Label Text="Institute *" FontSize="13"/>
+                                    <Entry Placeholder="Institute Name" x:Name="userInstitute" ReturnType="Next" Keyboard="Text" FontSize="13"/>
+                                    <Label Padding="0" FontSize="13" TextColor="Red" Text="Please enter the name of your Institute " IsVisible="False" x:Name="ErrorInstite"/>-->
+                                    <!--<Label Text="Your email" FontSize="13"/>
+                                    <Entry Placeholder="Email" x:Name="userEmail" ReturnType="Next" Keyboard="Text" FontSize="13" IsReadOnly="True" BackgroundColor="#003366"/>
+                                    
+                                    <Label></Label>--><!-- 
+                                    </StackLayout>--> 
+                       </StackLayout> </Frame></ScrollView></StackLayout>
+            <core:SfBusyIndicator x:Name="busyindicator"
+                    AnimationType="CircularMaterial"
+                    IsVisible="false"
+                    SizeFactor = "150" 
+                    TextColor="Red" />
+        </Grid>
+    </ContentPage.Content>
+</mauiPopup:BasePopupPage>

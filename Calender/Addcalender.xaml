@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mauiPopup:BasePopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui" 
+             x:Class="MauiApp1.Calender.Addcalender"
+             xmlns:mauiPopup="clr-namespace:MauiPopup.Views;assembly=MauiPopup"
+                         IsCloseOnBackgroundClick="False"
+                         ForegroundColor="Transparent"
+             Title="Addcalender">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout VerticalOptions="Center" Margin="15" Padding="15">
+                <ScrollView>
+                    <Frame BackgroundColor="{StaticResource Secondary}">
+                        <StackLayout 
+                             HorizontalOptions="Fill"
+                             VerticalOptions="Center">
+                            
+                            <Label Text="Add Calendar Event" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource Primary}" HorizontalOptions="Center" />
+                            <StackLayout Margin="0,20,0,0">
+                                <Label FontFamily="MontserratRegular" TextColor="Black" 
+                                   FontSize="13" Text="Name of the event"/>
+                                            <Grid Margin="0,5">
+                                                <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                                            <Entry BackgroundColor="Transparent" x:Name="event_name" ReturnType="Next" Keyboard="Text"  Placeholder="e.g. Mathematics Test" FontSize="13"
+                                       TextColor="Black" Margin="5,0"
+                                       PlaceholderColor="Gray" />       
+                                    <Label FontSize="13" TextColor="Red" Text="Please enter a name " IsVisible="False"  x:Name="ErrorName"/>
+                                </Grid >
+                            </StackLayout>
+                            <!--<StackLayout>
+                                <Label Text="Name of the event *" FontSize="13"/>
+                                <Frame Opacity="0.1" BackgroundColor="Transparent" CornerRadius="20"/>
+                                <Entry x:Name="event_name" ReturnType="Next" TextColor="Black" Keyboard="Text"  Placeholder="e.g. Mathematics Test" FontSize="13" />
+                                <Label FontSize="13" TextColor="Red" Text="Please enter a name " IsVisible="False"  x:Name="ErrorName"/>
+                            </StackLayout>-->
+
+                            <StackLayout Margin="0,5,0,0">
+                                <Label FontFamily="MontserratRegular" TextColor="Black" 
+                                   FontSize="13" Text="Description"/>
+                                <Grid Margin="0,5">
+                                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                                    <Entry BackgroundColor="Transparent" x:Name="event_description" ReturnType="Next" Keyboard="Text"  Placeholder="e.g. Logic Chapter 1, 2" FontSize="13"
+                                       TextColor="Black" Margin="5,0"
+                                       PlaceholderColor="Gray" />
+                                    
+                                </Grid >
+                            </StackLayout>
+                            <!--<Label Text="Description" FontSize="13" />
+                            <Frame Opacity="0.1" BackgroundColor="White" CornerRadius="20"/>
+                            <Entry x:Name="event_description" ReturnType="Next" Keyboard="Text" Placeholder="e.g. Logic Chapter 1, 2" FontSize="13" />-->
+                            <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                                <StackLayout>
+                                    <Label Text="Start date" FontSize="13"/>
+                                    <DatePicker 
+                                    x:Name="startDate"
+                                    Format="dd/MM/yyyy"
+                                    Date="{Binding selectedDate, Mode=TwoWay}"
+                                    TextColor="{StaticResource Primary}"
+                                       
+                                   FontSize="14"/>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label Text="Start time" FontSize="13"/>
+                                    <TimePicker x:Name="startTimePicker"
+                                    Time="12:00"
+                                    Format="T"
+                                    TextColor="{StaticResource Primary}"
+                                               
+                                    PropertyChanged="startTimePicker_PropertyChanged"
+                                    FontSize="14"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout>
+                                    <Label Text="End date" FontSize="13"/>
+                                    <DatePicker 
+                                    x:Name="endDate"
+                                     TextColor="{StaticResource Primary}"
+                                    Format="dd/MM/yyyy"
+                                    Date="{Binding selectedDate, Mode=TwoWay}"
+                                    MinimumDate="{Binding selctedDate, Mode=TwoWay}"
+                                     FontSize="14"/>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label Text="End time" FontSize="13"/>
+                                    <TimePicker x:Name="endTimePicker" 
+                                    Time="12:00"
+                                    TextColor="{StaticResource Primary}"
+                                    Format="T"
+                                     PropertyChanged="endTimePicker_PropertyChanged"  FontSize="14"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <Label Text="Colors" FontSize="13" Margin="0,10"/>
+                            <!--<telerik:RadSegmentedControl SelectionChanged="Handle_SelectionChanged" 
+                            x:Name="segmentedControl" 
+                            VisibleSegmentsCount="6"
+                            BorderColor="DarkSlateGray"
+                            FontColor="WhiteSmoke"
+                            FontFamily="{StaticResource Montserrat-SemiBold}"
+                            Color="Transparent"
+                            FontSize="12"
+                            SelectionTextColor="White">
+                                <telerik:RadSegmentedControl.SelectionIndicatorSettings>
+                                    <buttons:SelectionIndicatorSettings 
+                                Position="Fill"
+                                Color="Orange">
+                                    </buttons:SelectionIndicatorSettings>
+                                </telerik:RadSegmentedControl.SelectionIndicatorSettings>
+                                <sys:List x:TypeArguments="x:String">
+                                    <x:String>Red</x:String>
+                                    <x:String>Orange</x:String>
+                                    <x:String>Pink</x:String>
+                                    <x:String>Blue</x:String>
+                                    <x:String>Green</x:String>
+                                    <x:String>Violet</x:String>
+                                </sys:List>
+                            </telerik:RadSegmentedControl>-->
+
+                          
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Button x:Name="save_button" Text="Save" Clicked="save_button_Clicked" Scale="0.9"  BackgroundColor="{StaticResource Primary}" TextColor="White" CornerRadius="20" FontSize="14" WidthRequest="110" />
+                                <Button x:Name="cancel_button" Text="Cancel" Clicked="cancel_button_Clicked" Scale="0.9" BackgroundColor="{StaticResource Primary}" TextColor="White" CornerRadius="20" FontSize="14" WidthRequest="110" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </ScrollView>
+            </StackLayout>
+            <core:SfBusyIndicator x:Name="busyindicator"
+                    AnimationType="CircularMaterial"
+                    IsVisible="false"
+                    SizeFactor = "150" 
+                    TextColor="Red" />
+        </Grid>
+    </ContentPage.Content>
+</mauiPopup:BasePopupPage>

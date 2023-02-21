@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:progressBar="clr-namespace:Syncfusion.Maui.ProgressBar;assembly=Syncfusion.Maui.ProgressBar"
+              xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             x:Class="MauiApp1.Pages.MyAccount"
+             Title="MyAccount">
+
+    <ContentPage.ToolbarItems Color="White">
+        <ToolbarItem Order="Primary"/>
+        <ToolbarItem Text="Contact Us" Order="Primary" Clicked="Contactus_Clicked"/>
+        <ToolbarItem Text="Edit Account" Order="Secondary" Clicked="EditAccount_Clicked" />
+        <ToolbarItem Text="Delete Account" Order="Secondary" Clicked="Delete_Clicked"/>
+        <ToolbarItem Text="Sign Out" Order="Secondary" Clicked="SignOut_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <Grid BackgroundColor="{StaticResource Secondary}" >
+        <StackLayout  Padding="0,0,0,20" Margin="10">
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions="Start" FontFamily="MontserratRegular" FontSize="20" TextColor="Black" Text="Dashboard" />
+                <Label HorizontalOptions="CenterAndExpand"></Label>
+                <Label Margin="0,0,15,0"></Label>
+                <StackLayout>
+                    <Button
+                                    x:Name="help_button"
+                                    CornerRadius="4"
+                                    Text="HELP" 
+                                    Clicked="help_button_Clicked"
+                                    FontSize="13"
+                                    BackgroundColor="Transparent"
+                                    TextColor="PaleVioletRed"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="Center" 
+                            IsVisible="False"
+                            x:Name="helpMyAccount" >
+                <Frame CornerRadius="10" 
+                                HasShadow="True" 
+                                BorderColor="PaleVioletRed" BackgroundColor="{StaticResource Secondary}">
+                    <ScrollView>
+                        <StackLayout Margin="0,0,10,0" >
+                            <Label 
+                                            Text="* This page displays the GPA from all your subjects" TextColor="Black"/>
+                            <Label 
+                                            Text="  - The GPA is an approximation as the number of credits is not taken into consideration" TextColor="Black"/>
+                            <Label Margin="0,5">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span TextColor="Black" Text=" - The progress bar on this page, shows an estimated GPA that takes into consideration each subject's " />
+                                        <Span Text=" Continuous Assessment" TextColor="PaleVioletRed" />
+                                        <Span TextColor="Black" Text=" and " />
+                                        <Span Text="Final Exam" TextColor="PaleVioletRed" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </ScrollView>
+                </Frame>
+            </StackLayout>
+
+
+            <StackLayout Margin="0,10,0,0">
+                <Frame CornerRadius="10" BorderColor="Black" BackgroundColor="Transparent">
+                    <StackLayout>
+                        <Label HorizontalOptions="CenterAndExpand"
+                                    Text="Your GPA from all subjects " 
+                                    TextColor="Black" 
+                                Margin="20"
+                                    FontSize="17"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,15">
+                            <StackLayout Orientation="Vertical">
+                                <progressBar:SfCircularProgressBar TrackFill="Black" x:Name="totalGPA" Margin="25" Scale="2" ProgressFill="#FF90a84e">
+                                    <progressBar:SfCircularProgressBar>
+                                        <progressBar:SfCircularProgressBar.GradientStops>
+                                            <progressBar:ProgressGradientStop Color="#00bdaf" Value="0"/>
+                                            <progressBar:ProgressGradientStop Color="#2f7ecc" Value="50"/>
+                                        </progressBar:SfCircularProgressBar.GradientStops>
+                                    </progressBar:SfCircularProgressBar>
+                                </progressBar:SfCircularProgressBar>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+
+            <StackLayout Margin="0,10,0,0">
+                <Frame Padding="1" BackgroundColor="Transparent" BorderColor="Black" VerticalOptions="StartAndExpand">
+                    <StackLayout>
+                        <Label HorizontalOptions="CenterAndExpand"
+                                Text="Next 7 days calendar events " 
+                                TextColor="Black" 
+                                FontFamily="MontserratRegular" 
+                                FontSize="17"
+                                Margin="10"/>
+
+
+
+
+                        <StackLayout HorizontalOptions="Center" x:Name="Calendar_View_Text" IsVisible="true" Margin="5">
+                            <Label Text="There are no events in the next week"  FontFamily="MontserratRegular" FontSize="13" HorizontalOptions="Center"/>
+                            <Label Text="in your calendar" IsVisible="True" FontFamily="MontserratRegular" FontSize="13" HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+
+
+
+
+
+
+        </StackLayout>
+        <core:SfBusyIndicator x:Name="busyindicator"
+                    AnimationType="CircularMaterial"
+                    IsVisible="false"
+                    SizeFactor = "150" 
+                    TextColor="Red" />
+    </Grid>
+
+
+
+
+</ContentPage>

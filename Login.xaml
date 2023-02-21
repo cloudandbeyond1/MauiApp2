@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tabView="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView"
+             x:Class="MauiApp1.NewPage1"
+             xmlns:local="clr-namespace:MauiApp1"
+             Title="Login">
+    <Grid BackgroundColor="{StaticResource Secondary}" >
+
+
+        <StackLayout Margin="5" >
+            <Image Source="dotnet_bot.svg" HeightRequest="100"  HorizontalOptions="Center"/>
+
+            <StackLayout Margin="0,60">
+                <Label FontSize="32" Text="Welcome Back"/>
+
+            </StackLayout>
+
+            <StackLayout Spacing="5">
+                <Label FontFamily="MontserratRegular" TextColor="{StaticResource Primary}" 
+                       FontSize="16" Text="Username"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="Enter username"  x:Name="EmailEntry"
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" />
+                </Grid >
+                <Label TextColor="Red" Text="Please enter  your username" IsVisible="false"  x:Name="EmailError" />
+
+                <Label FontFamily="MontserratRegular" TextColor="{StaticResource Primary}"  
+                       FontSize="16" Text="Password"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="Enter password" x:Name="PasswordEntry"
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" IsPassword="True"/>
+                </Grid>
+                <Label TextColor="Red" Text="Please enter your password"  IsVisible="false"  x:Name="PasswordError"/>
+            </StackLayout>
+
+            <Button Margin="0,15" BackgroundColor="{StaticResource Primary}"  
+                    Text="LOG IN" TextColor="White" Command="{Binding LoginBtn}"  FontFamily="OpenSansBold"/>
+
+            <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+
+                <!--<Label FontFamily="MontserratRegular" TextColor="{StaticResource Primary}" 
+                       FontSize="16" Text="Forgot Password?" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand" 
+                       />-->
+
+                <Label Margin="0,15" BackgroundColor="Transparent"  
+                    Text="Forgot Password" TextColor="{StaticResource Primary}" FontFamily="OpenSansBold"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+            <!--<Button FontFamily="MontserratRegular" TextColor="{StaticResource Primary}" 
+                       FontSize="16" Text="Register"  VerticalOptions="EndAndExpand" 
+                       HorizontalOptions="EndAndExpand"
+                       />-->
+            <StackLayout>
+                <Button Margin="0,15" BackgroundColor="Transparent"  
+                    Text="Register" TextColor="{StaticResource Primary}" Command="{Binding RegisterBtn}" FontFamily="OpenSansBold"/>
+
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.AddSubject"
+             Title="AddSubject">
+    <Grid BackgroundColor="{StaticResource Secondary}" >
+        <StackLayout Margin="5">
+            <StackLayout Spacing="2" Padding="5,30,5,5">
+                <Label FontFamily="MontserratRegular" TextColor="{StaticResource Primary}" 
+                       FontSize="16" Text="Subject Name"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="e.g Maths" 
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" />
+                </Grid >
+
+
+                <Label FontFamily="MontserratRegular" TextColor="{StaticResource Primary}" 
+                       FontSize="16" Text="Lecturer Name"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="e.g. John Luther" 
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" />
+                </Grid >
+
+                <Label FontFamily="MontserratRegular" TextColor="{StaticResource Primary}" 
+                       FontSize="16" Text="Lecturer Email"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="e.g. johnluther@gmail.com" 
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" />
+                </Grid >
+
+                <Label FontFamily="MontserratRegular" TextColor="{StaticResource Primary}" 
+                       FontSize="16" Text="Continuos Assessment Weight"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="e.g. 70" 
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" />
+                </Grid >
+
+                <Label FontFamily="MontserratRegular" TextColor="{StaticResource Primary}" 
+                       FontSize="16" Text="Final Assessment Weight"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="e.g. 60" 
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" />
+                </Grid >
+                <FlexLayout Direction="Row"
+                AlignItems="Center"
+                JustifyContent="SpaceEvenly" Margin="0,15">
+                    <Button Margin="0,15" BackgroundColor="{StaticResource Primary}"  
+                    Text="Submit" TextColor="White" WidthRequest="160" HeightRequest="40" FontFamily="OpenSansBold" HorizontalOptions="Start"/>
+                    <Button Margin="0,15" BackgroundColor="{StaticResource Primary}"  
+                    Text="Cancel" TextColor="White" WidthRequest="160" HeightRequest="40" FontFamily="OpenSansBold" HorizontalOptions="End"/>
+                </FlexLayout>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

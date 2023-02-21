@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:progressBar="clr-namespace:Syncfusion.Maui.ProgressBar;assembly=Syncfusion.Maui.ProgressBar"
+             x:Class="MauiApp1.Pages.SubjectDetails"
+             Title="SubjectDetails">
+    <Grid BackgroundColor="{StaticResource Secondary}" >
+        <StackLayout  Padding="0,0,0,20" Margin="10,20,10,10">
+
+
+
+            <StackLayout>
+                <Frame CornerRadius="10" BorderColor="Black" BackgroundColor="Transparent">
+
+                    <StackLayout Spacing="5">
+                        <StackLayout>
+                            <Label HorizontalOptions="Start" FontFamily="OpenSansRegular" FontSize="20" TextColor="Black" Text="Subject Details"/>
+                            <Button
+                                   
+                                    CornerRadius="4"
+                                   Margin="0,-30,0,0"
+                                    Text="HELP" 
+                                   HorizontalOptions="End"
+                                    FontSize="13"
+                                   BackgroundColor="Transparent"
+                                    TextColor="PaleVioletRed"/>
+                        </StackLayout>
+                        <Label HorizontalOptions="Start"
+                                    Text="Subject: Mathematics" 
+                                    TextColor="Black" 
+                                
+                                    FontSize="17"/>
+                        <Label HorizontalOptions="Start"
+                                    Text="Continuos Assessment: 50%" 
+                                    TextColor="Black" 
+                                
+                                    FontSize="17"/>
+                        <Label HorizontalOptions="Start"
+                                    Text="Remaining: 50%" 
+                                    TextColor="Black" 
+                                
+                                    FontSize="17"/>
+                        <Label HorizontalOptions="Start"
+                                    Text="Final Exam: 50%" 
+                                    TextColor="Black" 
+                                
+                                    FontSize="17"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,15">
+                            <StackLayout Orientation="Vertical">
+                                <!--<progressBar:SfCircularProgressBar TrackFill="Black" x:Name="totalGPA" Margin="25" Scale="2" ProgressFill="#FF90a84e">
+                                   <progressBar:SfCircularProgressBar>
+                                        <progressBar:SfCircularProgressBar.GradientStops>
+                                            <progressBar:ProgressGradientStop Color="#00bdaf" Value="0"/>
+                                            <progressBar:ProgressGradientStop Color="#2f7ecc" Value="50"/>
+                                        </progressBar:SfCircularProgressBar.GradientStops>
+                                   </progressBar:SfCircularProgressBar>
+                                </progressBar:SfCircularProgressBar>-->
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout Margin="0,10,0,0" >
+                <Frame CornerRadius="10" BorderColor="Black" BackgroundColor="Transparent" HeightRequest="230">
+
+                    <StackLayout Spacing="5">
+                        <StackLayout>
+                            <Label HorizontalOptions="Start" FontFamily="OpenSansRegular" FontSize="20" TextColor="Black" Text="Your Progress"/>
+                            <Button
+                                   
+                                    CornerRadius="4"
+                                   Margin="0,-30,0,0"
+                                    Text="HELP" 
+                                   HorizontalOptions="End"
+                                    FontSize="13"
+                                   BackgroundColor="Transparent"
+                                    TextColor="PaleVioletRed"/>
+                        </StackLayout>
+                        <Label HorizontalOptions="Start"
+                                    Text="Continuos Assessment: 50%/100%" 
+                                    TextColor="Black" 
+                                
+                                    FontSize="17"/>
+                        <progressBar:SfLinearProgressBar Progress="50"/>
+                        <Label HorizontalOptions="Start"
+                                    Text="Final Exam: 20%/50%" 
+                                    TextColor="Black" 
+                                    FontSize="17"/>
+                        <progressBar:SfLinearProgressBar Progress="20"/>
+
+                        <Label HorizontalOptions="Start"
+                                    Text="Mathematics GPA: 0.00%/100%" 
+                                    TextColor="Black" 
+                                    FontSize="17"/>
+                        <progressBar:SfLinearProgressBar Progress="0"/>
+                      
+                    </StackLayout>
+
+                </Frame>
+                <FlexLayout Direction="Row"
+                AlignItems="Center"
+                JustifyContent="SpaceEvenly" Margin="0,-40,10,0">
+                    <Button BackgroundColor="{StaticResource Primary}"  
+                    Text="Add CA Result" TextColor="White" WidthRequest="160" HeightRequest="40" FontFamily="OpenSansBold" HorizontalOptions="Start"/>
+                    <Button BackgroundColor="{StaticResource Primary}"  
+                    Text="Add Final Exam" TextColor="White" WidthRequest="160" HeightRequest="40" FontFamily="OpenSansBold" HorizontalOptions="End"/>
+                </FlexLayout>
+            </StackLayout>
+
+            <StackLayout Margin="0,35,0,0" >
+                <Frame CornerRadius="10" BorderColor="Black" BackgroundColor="Transparent">
+
+                    <StackLayout Spacing="5">
+                        <StackLayout>
+                            <Label HorizontalOptions="Start" FontFamily="OpenSansRegular" FontSize="20" TextColor="Black" Text="Results"/>
+                            <Button
+                                   
+                                    CornerRadius="4"
+                                   Margin="0,-30,0,0"
+                                    Text="HELP" 
+                                   HorizontalOptions="End"
+                                    FontSize="13"
+                                   BackgroundColor="Transparent"
+                                    TextColor="PaleVioletRed"/>
+                        </StackLayout>
+                        <Label HorizontalOptions="Center" FontFamily="OpenSansRegular" FontSize="20" TextColor="Black" Text="Results"/>
+                        <Border Stroke="#C49B33"
+        StrokeThickness="4"
+        StrokeShape="Line 610 20, 500 120"
+        Background="#2B0B98"
+        
+        HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                </Frame>
+
+            </StackLayout>
+
+
+
+
+
+
+
+
+        </StackLayout>
+    </Grid>
+
+
+
+</ContentPage>

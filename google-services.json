@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "365327617732",
+    "firebase_url": "https://college-dairy-default-rtdb.firebaseio.com",
+    "project_id": "college-dairy",
+    "storage_bucket": "college-dairy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365327617732:android:706ba061288271b6b9c391",
+        "android_client_info": {
+          "package_name": "com.cab.MauiApp1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365327617732-6e8jqtl5o53eujnqo22pfmgg4k1964n9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW7z-hB7VrwdcimRWzjjOfhdNF_6jIPz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365327617732-6e8jqtl5o53eujnqo22pfmgg4k1964n9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "365327617732-odjdhrj5qe0esr9d33n24nt35bt93qd7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.clouandbeyond.collegediary"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365327617732:android:79b85eb674ab3267b9c391",
+        "android_client_info": {
+          "package_name": "com.cab.collegediary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365327617732-6e8jqtl5o53eujnqo22pfmgg4k1964n9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW7z-hB7VrwdcimRWzjjOfhdNF_6jIPz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365327617732-6e8jqtl5o53eujnqo22pfmgg4k1964n9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "365327617732-odjdhrj5qe0esr9d33n24nt35bt93qd7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.clouandbeyond.collegediary"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,176 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-maccatalyst;net6.0-android</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
+		<OutputType>WinExe</OutputType>
+		<RootNamespace>MauiApp1</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>MauiApp1</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.mauiapp1</ApplicationId>
+		<ApplicationIdGuid>75a1c115-19a8-418a-aed7-abfb19b756e5</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<Configurations>Debug;Release;mauiapp</Configurations>
+	</PropertyGroup>
+
+	<PropertyGroup>
+	  <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-maccatalyst|AnyCPU'">
+	  <ApplicationId>com.cab.collegediary</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-maccatalyst|AnyCPU'">
+	  <ApplicationId>com.cab.collegediary</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='mauiapp|net6.0-maccatalyst|AnyCPU'">
+	  <ApplicationId>com.cab.collegediary</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
+	  <ApplicationId>com.cab.collegediary</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-android|AnyCPU'">
+	  <ApplicationId>com.cab.collegediary</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='mauiapp|net6.0-android|AnyCPU'">
+	  <ApplicationId>com.cab.collegediary</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows10.0.19041.0|AnyCPU'">
+	  <ApplicationId>com.cab.collegediary</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows10.0.19041.0|AnyCPU'">
+	  <ApplicationId>com.cab.collegediary</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='mauiapp|net6.0-windows10.0.19041.0|AnyCPU'">
+	  <ApplicationId>com.cab.collegediary</ApplicationId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Fonts\Montserrat-Black.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-BlackItalic.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-BoldItalic.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-ExtraBold.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-ExtraBoldItalic.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-ExtraLight.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-ExtraLightItalic.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-Italic.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-Light.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-LightItalic.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-Medium.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-MediumItalic.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-SemiBold.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-SemiBoldItalic.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-Thin.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-ThinItalic.ttf" />
+	  <None Remove="Resources\Images\ic.png" />
+	  <None Remove="Resources\Images\logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	  <PackageReference Include="Plugin.Maui.Popup" Version="1.0.4" />
+	  <PackageReference Include="Syncfusion.Maui.Calendar" Version="20.4.50" />
+	  <PackageReference Include="Syncfusion.Maui.Core" Version="20.4.50" />
+	  <PackageReference Include="Syncfusion.Maui.ProgressBar" Version="20.4.50" />
+	  <PackageReference Include="Syncfusion.Maui.Scheduler" Version="20.4.50" />
+	  <PackageReference Include="Syncfusion.Maui.TabView" Version="20.4.50" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Calender\Addcalender.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ForgotPassword\ForgotPasswordPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Login.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\AddSubject.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Calendar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Contactus.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\EditAccount.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\MyAccount.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\PrivacyPolicy.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Register.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Subject.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\SubjectDetails.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Control\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Login.xaml.cs">
+	    <DependentUpon>Login.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadGenericExceptionInfoBarMauiApp1HideInfoBar="True" /></VisualStudio></ProjectExtensions>
+
+</Project>

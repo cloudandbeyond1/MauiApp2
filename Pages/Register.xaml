@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Register"
+              NavigationPage.HasNavigationBar="False"
+             Title="Register">
+
+
+    <Grid BackgroundColor="{StaticResource Secondary}" >
+
+
+        <StackLayout Margin="5" >
+
+
+            <StackLayout Margin="0,60">
+
+                <Label FontSize="32" Text="College Diary" HorizontalOptions="Center" />
+
+            </StackLayout>
+
+            <StackLayout Spacing="5">
+                <!--<Label FontFamily="MontserratRegular" TextColor="{StaticResource Primary}" 
+                       FontSize="16" Text="Username"/>-->
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="Name" 
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" />
+                </Grid>
+                <Label TextColor="Red" Text="Please enter a valid email"  x:Name="EmailError" />
+
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="College/University" 
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" />
+                </Grid>
+
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="Email" x:Name="EmailEntry"
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" />
+                </Grid>
+
+                <!--<Label FontFamily="MontserratRegular" TextColor="{StaticResource Primary}"  
+                       FontSize="16" Text="Password"/>-->
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="Enter password" x:Name="PasswordEntry"
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" IsPassword="True"/>
+                </Grid>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="20"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="Confirm password" 
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" IsPassword="True"/>
+                </Grid>
+                <Label TextColor="Red" Text="Please enter your password"  x:Name="PasswordError"/>
+            </StackLayout>
+
+            <Button Margin="0,15" BackgroundColor="{StaticResource Primary}"  
+                    Text="Register" TextColor="White" Command="{Binding RegisterUser}"  FontFamily="OpenSansBold"/>
+
+          
+        </StackLayout>
+    </Grid>
+
+
+</ContentPage>
